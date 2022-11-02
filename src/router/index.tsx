@@ -1,10 +1,17 @@
 import {createBrowserRouter} from 'react-router-dom'
 import { Layout } from '../components/Layout'
-import { NotFoundComponent } from '../components/NotFoundComponent'
+import { NotFoundPage } from '../pages/NotFoundPage'
+import { Store } from '../pages/Store'
 export const router = createBrowserRouter([
     {
         path: "/",
         element : <Layout/>,
-        errorElement : <NotFoundComponent/>
+        errorElement : <NotFoundPage/>,
+        children: [
+            {
+                path: "/store",
+                element : <Store/>
+            }
+        ]
     }
 ])

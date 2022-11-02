@@ -9,5 +9,10 @@ header {
     }
     nav {
         width: 30%;
+        .navigation__link {
+            color: rgb(17, 17, 17);
+            text-decoration: none;
+            opacity: 1;
+        }
     }
 }

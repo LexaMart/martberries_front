@@ -1,0 +1,6 @@
+.store-table {
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+    height: calc(100vh - 102px);
+}

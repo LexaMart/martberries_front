@@ -1,3 +1,10 @@
 .wrapper {
-    width: 100vw;
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 100vh;
+}
+
+.outlet {
+    min-height: calc(100vh - 100px);
+    border: 1px solid rgba(45, 45, 45, 0.5);
 }
