@@ -7,8 +7,8 @@ export interface StoreIntialStateType {
 
 export interface Product {
     name: string,
-    price: number,
-    amount: number,
+    price: number | null | string,
+    amount: number | null | string,
     id: string
 };
 

@@ -9,10 +9,17 @@ header {
     }
     nav {
         width: 30%;
+        display: flex;
         .navigation__link {
             color: rgb(17, 17, 17);
             text-decoration: none;
             opacity: 1;
+            display: flex;
+            align-items: center;
+            img {
+                width: 20px;
+                margin-right: 10px;
+            }
         }
     }
 }

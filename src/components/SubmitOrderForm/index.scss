@@ -1,0 +1,30 @@
+.shadow {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(72, 72, 72, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    height: 500px;
+    width: 400px;
+    background-color: rgba(114, 111, 111, 0.436);
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    &__inputs {
+        margin-top: 40px;
+        height: 80%;
+        display: flex;
+        &__input {
+            height: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+

@@ -4,16 +4,14 @@ import { useAppDispatch, useAppSelector } from '../../store/store';
 import { Product } from '../../types/storeTypes';
 import './index.scss';
 
-export const StoreItem = ({ name, price, amount, id }: Product) => {
+export const CartItem = ({ name, price, amount = 0, id }: Product) => {
     const dispatch = useAppDispatch();
     const { userCart } = useAppSelector((store) => store.storeReducer);
-    const [orderNumber, setOrderNumber] = useState<number>();
+    const [orderNumber, setOrderNumber] = useState<number | string>(amount || "");
     const [inCart, setInCart] = useState(false);
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        if (+event.target.value >= 0) {
-            setOrderNumber(+event.target.value)
-        }
+        setOrderNumber(+event.target.value)
     }
 
     const moveItemToCart = (): void => {
@@ -36,7 +34,7 @@ export const StoreItem = ({ name, price, amount, id }: Product) => {
             <div className='row__price'>{price} $</div>
             <div className='row__amount'>{amount} left</div>
             <div className='row__order'>
-                <input disabled={inCart} className='row__order__input' type={'number'} value={orderNumber} onChange={onChange} placeholder={""} />
+                <input className='row__order__input' type={'number'} value={orderNumber} onChange={onChange} placeholder={""} />
                 {inCart ? <div onClick={moveItemToCart} className='row__order__btn remove'>remove from cart</div> : <div onClick={moveItemToCart} className={orderNumber ? 'row__order__btn' : "row__order__btn disabled"}>To cart</div>}
             </div>
         </div>

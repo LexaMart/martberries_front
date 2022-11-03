@@ -9,14 +9,14 @@ import store from "../../store/store";
 
 export const Layout = ({ ...props }) => {
     return (
-        <div className="wrapper">
-            <Header />
-            <div className="outlet">
-                <Provider store={store}>
+        <Provider store={store}>
+            <div className="wrapper">
+                <Header />
+                <div className="outlet">
                     <Outlet />
-                </Provider>
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </Provider>
     )
 }
