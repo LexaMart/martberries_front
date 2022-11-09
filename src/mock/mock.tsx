@@ -1,3 +1,5 @@
+import moment from "moment";
+import { Order } from "../types/ordersTypes";
 import { Product } from "../types/storeTypes";
 
 export const ProductsMock:Product[] = [
@@ -37,5 +39,44 @@ export const ProductsMock:Product[] = [
         amount: 4,
         price: 1448,
         id: "6",
+    },
+]
+
+export const OrdersMock: Order[] = [
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
+    },
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
+    },
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
+    },
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
+    },
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
+    },
+    {
+        id: "1111-1111-1111",
+        date: `${moment()}`,
+        status: "0",
+        requestor: "Alex December"
     },
 ]

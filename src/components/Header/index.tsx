@@ -19,6 +19,7 @@ export const Header = ({ ...props }) => {
             <nav className="navigation">
                 {userCart.length  ? (<NavLink className="navigation__link svg" style={({isActive}) => isActive ? {opacity: "0.5"} : {opacity : "1"}} to={'./cart'}><img src={cart} alt="cart"/></NavLink>) : <></>}
                 <NavLink className="navigation__link" style={({isActive}) => isActive ? {opacity: "0.5"} : {opacity : "1"}} to={'/store'}>Store</NavLink>
+                <NavLink className="navigation__link" style={({isActive}) => isActive ? {opacity: "0.5"} : {opacity : "1"}} to={'/admin'}>Admin</NavLink>
             </nav>
         </header>
     )

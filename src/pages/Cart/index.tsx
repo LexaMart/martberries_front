@@ -13,7 +13,7 @@ export const Cart = ({ ...props }) => {
     return (
         <>
         {isForm ? <SubmitOrderForm closeFunc={setIsForm}/> : <></>}
-        <div className='cart-table'>
+        <div className='table'>
             {userCart.map((el, index) => {
                 return (
                     <CartItem key={index} name={el.name} price={el.price} amount={el.amount} id={el.id} />

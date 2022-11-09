@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { addProductToCart } from '../../store/reducers/SoreReducer/storeReducer';
+import { addProductToCart } from '../../store/reducers/StoreReducer/storeReducer';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { Product } from '../../types/storeTypes';
 import './index.scss';

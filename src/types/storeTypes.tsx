@@ -1,5 +1,3 @@
-import store from "../store/store"
-
 export interface StoreIntialStateType {
     productsList: Product[];
     userCart: Product[];
@@ -11,7 +9,3 @@ export interface Product {
     amount: number | null | string,
     id: string
 };
-
-export type AppDispatch = typeof store.dispatch
-export type RootState = ReturnType<typeof store.getState>
-

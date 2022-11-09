@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { StoreItem } from '../../components/StoreItem';
-import { getProductsList } from '../../store/reducers/SoreReducer/storeReducer';
+import { getProductsList } from '../../store/reducers/StoreReducer/storeReducer';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import './index.scss'
 
