@@ -7,5 +7,6 @@ export interface Product {
     name: string,
     price: number | null | string,
     amount: number | null | string,
+    orderNumber?: number | string,
     id: string
 };

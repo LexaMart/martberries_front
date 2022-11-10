@@ -29,8 +29,6 @@ export const SubmitOrderForm = ({ closeFunc }: { closeFunc: Function }) => {
         setAddInfo(event.target.value)
     }
 
-
-
     return (
         <div onClick={closeForm} className="shadow">
             <div onClick={(e) => e.stopPropagation()} className="form">

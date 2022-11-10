@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { CartItem } from '../../components/CartItem';
-import { SubmitOrderForm } from '../../components/SubmitOrderForm';
+import { CartItem } from './components/CartItem';
+import { SubmitOrderForm } from './components/SubmitOrderForm';
 import { useAppSelector } from '../../store/store';
 import './index.scss'
 
@@ -16,7 +16,7 @@ export const Cart = ({ ...props }) => {
         <div className='table'>
             {userCart.map((el, index) => {
                 return (
-                    <CartItem key={index} name={el.name} price={el.price} amount={el.amount} id={el.id} />
+                    <CartItem key={index} name={el.name} price={el.price} amount={el.amount} id={el.id} orderNumber={el.orderNumber} />
                 )
             })}
         </div>

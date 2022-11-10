@@ -9,7 +9,8 @@ const initialState: StoreIntialStateType = {
 
 // export const addItemAction = createAction("AddItem");
 export const setProductsList = createAction<Product[]>("SET_PRODUCTS_LIST");
-export const addProductToCart = createAction<Product>("ADD_PRODUCT_TO_CART");
+export const toggleProductToCart = createAction<Product>("ADD_PRODUCT_TO_CART");
+export const changeCartProduct = createAction<Product>("CHANGE_CART_PRODUCT");
 export const getProductsList = createAction("GET_PRODUCTS_LIST");
 
 
@@ -19,11 +20,15 @@ export const storeReducer = createReducer(initialState, (builder) => {
         state.productsList = action.payload;
     })
   builder.addCase(getProductsList, (state, action) => {})
-  builder.addCase(addProductToCart, (state, action) => {
+  builder.addCase(toggleProductToCart, (state, action) => {
     if (state.userCart.find(el => el.id === action.payload.id)) {
       state.userCart = state.userCart.filter(el => el.id !== action.payload.id);
     }else {
       state.userCart.push(action.payload);
     }
+  })
+  builder.addCase(changeCartProduct, (state, action) => {
+    state.userCart = state.userCart.filter(el => el.id !== action.payload?.id);
+    state.userCart.push(action.payload);
   })
 })

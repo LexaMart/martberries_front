@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { addProductToCart } from '../../store/reducers/StoreReducer/storeReducer';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { Product } from '../../types/storeTypes';
+import { changeCartProduct, toggleProductToCart } from '../../../../store/reducers/StoreReducer/storeReducer';
+import { useAppDispatch, useAppSelector } from '../../../../store/store';
+import { Product } from '../../../../types/storeTypes';
 import './index.scss';
 
-export const CartItem = ({ name, price, amount = 0, id }: Product) => {
+export const CartItem = ({ name, price, amount = 0, id, orderNumber }: Product) => {
     const dispatch = useAppDispatch();
     const { userCart } = useAppSelector((store) => store.storeReducer);
-    const [orderNumber, setOrderNumber] = useState<number | string>(amount || "");
     const [inCart, setInCart] = useState(false);
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        setOrderNumber(+event.target.value)
+        dispatch(changeCartProduct({ name, price, amount, id, orderNumber: +event.target.value }));
     }
 
     const moveItemToCart = (): void => {
         if (orderNumber) {
-            dispatch(addProductToCart({ name, price, amount: orderNumber || 0, id }))
+            dispatch(toggleProductToCart({ name, price, amount: orderNumber || 0, id }))
         }
     }
 
