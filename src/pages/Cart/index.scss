@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column;
     overflow-y: auto;
-    max-height: calc(100vh - 300px);
+    height: calc(100vh - 100px);
 }
 
 .create-order {
