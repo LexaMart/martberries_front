@@ -1,6 +1,7 @@
 import moment from "moment";
 import { Order } from "../types/ordersTypes";
 import { Product } from "../types/storeTypes";
+import { Transaction } from "../types/transactionsType";
 
 export const ProductsMock:Product[] = [
     {
@@ -44,111 +45,42 @@ export const ProductsMock:Product[] = [
 
 export const OrdersMock: Order[] = [
     {
-        id: "1111-1111-1111",
+        id: "1111-1111-1112",
         date: `${moment()}`,
         status: "0",
         requestor: "Alex December"
     },
     {
-        id: "1111-1111-1111",
+        id: "1111-1111-1113",
         date: `${moment()}`,
         status: "0",
         requestor: "Alex December"
     },
     {
-        id: "1111-1111-1111",
+        id: "1111-1111-1115",
         date: `${moment()}`,
         status: "0",
         requestor: "Alex December"
     },
     {
-        id: "1111-1111-1111",
+        id: "1111-1111-1116",
         date: `${moment()}`,
         status: "0",
         requestor: "Alex December"
     },
+]
+
+export const TransactionsMock:Transaction[] = [
     {
-        id: "1111-1111-1111",
+        id: "1113-1112-1115",
+        activity: "Funds received",
         date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
+        amount: 500,
     },
     {
-        id: "1111-1111-1111",
+        id: "1113-1112-1215",
+        activity: "Product purchasing",
         date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
-    },
-    {
-        id: "1111-1111-1111",
-        date: `${moment()}`,
-        status: "0",
-        requestor: "Alex December"
+        amount: -1250,
     },
 ]

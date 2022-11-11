@@ -13,7 +13,7 @@ export const AdminPage = ({ ...props }) => {
     return (
         <>
             <div className='table'>
-              {adminOrders.map(el => <OrderItem id={el.id} date={el.date} status={el.status} requestor={el.requestor} />)}
+              {adminOrders.map(el => <OrderItem key={el.id} id={el.id} date={el.date} status={el.status} requestor={el.requestor} />)}
             </div>
         </>
     )

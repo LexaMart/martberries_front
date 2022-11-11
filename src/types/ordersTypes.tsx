@@ -6,5 +6,6 @@ export interface Order {
 }
 
 export interface OrderReducerType {
-    adminOrders: Order[]
+    adminOrders: Order[];
+    accountingOrders: Order[];
 }

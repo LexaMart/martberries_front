@@ -14,7 +14,7 @@ export const OrderItem = ({ id, date, status, requestor }: Order) => {
                 <div className="order__status">{status}</div>
             </div>
             {isDetails ?
-                <div className="details">
+                <div className={isDetails ? "appear details" : "details"}>
                     <div className="details__add-info">
                         <div className="details__add-info__item">
                             Add Info 1

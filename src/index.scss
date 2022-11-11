@@ -42,3 +42,10 @@ code {
   opacity: 0.5;
   cursor: pointer;
 }
+
+.table {
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+}

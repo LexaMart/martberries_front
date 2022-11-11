@@ -1,0 +1,14 @@
+.accounting {
+    .accounting-navigate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        border-bottom: 1px solid black;
+        a {
+            text-decoration: none;
+            color: black;
+            margin-right: 15px;
+        }
+    }
+}
