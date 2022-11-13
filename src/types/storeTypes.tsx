@@ -12,7 +12,7 @@ export interface TransactionsStateType {
 export interface Product {
     name: string,
     price: number | null | string,
-    amount: number | null | string,
+    amount: number | string,
     orderNumber?: number | string,
     id: string
 };

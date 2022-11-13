@@ -1,0 +1,15 @@
+.details {
+    &__item {
+        display: flex;
+        margin-bottom: 20px;
+        &__data:nth-child(1){
+            width: 10%;
+        }
+        &__data:nth-child(2){
+            width: 20%;
+        }
+        &__data:nth-child(3){
+            width: 10%;
+        }
+    }
+}
