@@ -1,12 +1,13 @@
+import axios from "axios";
 import { takeEvery, put } from "redux-saga/effects";
+import { Api } from "../../../constants/constants";
 // import axios from "axios";
-import { ProductsMock } from "../../../mock/mock";
 import { getProductsList, setProductsList } from "./storeReducer";
 
 
 function* getProductsListSaga() {
-  const result = ProductsMock;
-  yield put(setProductsList(result));
+  const { data } = yield axios.get(Api.getProducts);
+  yield put(setProductsList(data));
 }
 
 function* StoreSaga() {

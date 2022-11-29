@@ -10,7 +10,7 @@ export const Store = ({ ...props }) => {
 
     useEffect(() => {
         dispatch(getProductsList());
-    }, [])
+    }, [dispatch])
     return (
         <div className='store-table'>
             {productsList.map((el, index) => {
