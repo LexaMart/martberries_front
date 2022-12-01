@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column;
     overflow-y: auto;
-    height: calc(100vh - 100px);
+    height: fit-content;
+    max-height: calc(100vh - 100px) !important;
 }
 
 .create-order {

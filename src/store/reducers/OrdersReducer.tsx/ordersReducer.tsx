@@ -1,5 +1,5 @@
 import { createReducer, createAction, PayloadAction } from "@reduxjs/toolkit";
-import { Order, OrderReducerType } from "../../../types/ordersTypes";
+import { Order, OrderReducerType, SubmitOrderInput } from "../../../types/ordersTypes";
 
 const initialState: OrderReducerType = {
   adminOrders: [],
@@ -16,6 +16,8 @@ export const setAccountingOrdersList = createAction<Order[]>("SET_ACCOUNTING_ORD
 export const getStorageOrdersList = createAction("GET_STORAGE_LIST");
 export const setStorageOrdersList = createAction<Order[]>("SET_STORAGE_LIST");
 
+export const createOrder = createAction<SubmitOrderInput, any>("CREATE_ORDER");
+
 export const ordersReducer = createReducer(initialState, (builder) => {
   builder.addCase(setAdminOrderList, (state, action: PayloadAction<any>) => {
     state.adminOrders = action.payload;
@@ -29,4 +31,5 @@ export const ordersReducer = createReducer(initialState, (builder) => {
     state.storageOrders = action.payload;
   });
   builder.addCase(getStorageOrdersList, (state, action) => {})
+  builder.addCase(createOrder, (state, action) => {})
 })

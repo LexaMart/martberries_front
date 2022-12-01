@@ -16,3 +16,16 @@ export interface OrderReducerType {
     accountingOrders: Order[];
     storageOrders: Order[];
 }
+
+export interface SubmitOrderInput {
+    order: {
+        orderedProducts: {
+            productId: string;
+            amount: string;
+        }[];
+        customer_name: string;
+        customer_phone: string;
+        customer_additiona_info: string;
+    }
+    callback: Function;
+}

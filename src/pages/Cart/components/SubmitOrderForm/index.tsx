@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createOrder } from "../../../../store/reducers/OrdersReducer.tsx/ordersReducer";
+import { useAppDispatch } from "../../../../store/store";
+import { Product } from "../../../../types/storeTypes";
 import './index.scss';
 
-export const SubmitOrderForm = ({ closeFunc }: { closeFunc: Function }) => {
+export const SubmitOrderForm = ({ closeFunc, cartProducts }: { closeFunc: Function, cartProducts: Product[] }) => {
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [addInfo, setAddInfo] = useState("");
@@ -29,6 +35,24 @@ export const SubmitOrderForm = ({ closeFunc }: { closeFunc: Function }) => {
         setAddInfo(event.target.value)
     }
 
+    const submit = () => {
+        dispatch(createOrder(
+            {
+                order: {
+                    customer_name: name,
+                    customer_phone: phone,
+                    customer_additiona_info: addInfo,
+                    orderedProducts: cartProducts.map(el => {
+                        return {
+                            productId: el.id,
+                            amount: `${el.orderNumber}`
+                        }
+                    })
+                },
+                callback: () => { navigate("/store") }
+            }))
+    }
+
     return (
         <div onClick={closeForm} className="shadow">
             <div onClick={(e) => e.stopPropagation()} className="form">
@@ -38,7 +62,7 @@ export const SubmitOrderForm = ({ closeFunc }: { closeFunc: Function }) => {
                     <input id="phone" value={phone} onChange={onInputChange} className="form__inputs__input" placeholder="Your Phone" />
                     <textarea id="add-info" value={addInfo} onChange={onTextAreaChange} className="form__inputs__text" placeholder="Additional Info" />
                 </div>
-                <div className={"form__btns"}><div className={ name && phone ? "form__btns__btn" : "form__btns__btn disabled-btn"}>Submit Order</div></div>
+                <div onClick={submit} className={"form__btns"}><div className={name && phone ? "form__btns__btn" : "form__btns__btn disabled-btn"}>Submit Order</div></div>
             </div>
         </div>
     )
