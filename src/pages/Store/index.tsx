@@ -8,7 +8,7 @@ export const Store = ({ ...props }) => {
     const { productsList } = useAppSelector((store) => store.storeReducer);
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
+    useEffect(() => {        
         dispatch(getProductsList());
     }, [dispatch])
     return (

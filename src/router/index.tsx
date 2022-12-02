@@ -6,6 +6,7 @@ import { AccountingTransaction } from '../pages/Accaunting/components/Accounting
 import { AdminPage } from '../pages/AdminPage'
 import { Cart } from '../pages/Cart'
 import { NotFoundPage } from '../pages/NotFoundPage'
+import { PurchasingPage } from '../pages/PurchasingPage'
 import { StoragePage } from '../pages/StoragePage'
 import { Store } from '../pages/Store'
 export const router = createBrowserRouter([
@@ -44,6 +45,20 @@ export const router = createBrowserRouter([
             {
                 path: "/storage",
                 element: <StoragePage/>
+            },
+            {
+                path: "/purchasing",
+                element: <PurchasingPage/>,
+                children: [
+                    {
+                        path: "/purchasing/transactions",
+                        element: <></>
+                    },
+                    {
+                        path: "/purchasing/orders",
+                        element: <></>
+                    }
+                ]
             }
         ]
     }
