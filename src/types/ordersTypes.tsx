@@ -19,6 +19,7 @@ export interface OrderReducerType {
     adminOrders: Order[];
     accountingOrders: Order[];
     storageOrders: Order[];
+    trackingInfo: Order | null;
 }
 
 export interface SubmitOrderInput {

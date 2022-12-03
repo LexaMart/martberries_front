@@ -5,6 +5,7 @@ const initialState: OrderReducerType = {
   adminOrders: [],
   accountingOrders: [],
   storageOrders: [],
+  trackingInfo: null,
 };
 
 export const setAdminOrderList = createAction<Order[]>("SET_ADMIN_ORDERS_LIST");
@@ -20,9 +21,11 @@ export const createOrder = createAction<SubmitOrderInput, any>("CREATE_ORDER");
 export const changeOrderStatus = createAction<{ id: string, statusId: number }>("CHANGE_ORDER_STATUS");
 export const deleteOrder = createAction<{ id: string }>("DELETE_ORDER");
 
-export const submitOrderProvidedMoney = createAction<{ id: string, requestedMoney: number }>("SET_ORDER_PROVIDED_MONEY");
+export const submitOrderProvidedMoney = createAction<{ id: string, submittedMoney: number }>("SET_ORDER_PROVIDED_MONEY");
 export const submitOrderRequestedMoney = createAction<{ id: string, requestedMoney: number }>("SET_ORDER_REQUESTED_MONEY");
 
+export const getOrderById = createAction<{id:string}>("GET_ORDER_BY_ID");
+export const setTrackingInfo = createAction<Order | null>("SET_TRACKING_INFO");
 
 export const ordersReducer = createReducer(initialState, (builder) => {
   builder.addCase(setAdminOrderList, (state, action: PayloadAction<any>) => {
@@ -42,5 +45,8 @@ export const ordersReducer = createReducer(initialState, (builder) => {
   builder.addCase(deleteOrder, (state, action) => { })
   builder.addCase(submitOrderProvidedMoney, (state, action) => { })
   builder.addCase(submitOrderRequestedMoney, (state, action) => { })
-
+  builder.addCase(getOrderById, (state, action) => {})
+  builder.addCase(setTrackingInfo, (state, action) => {
+    state.trackingInfo = action.payload;
+  })
 })

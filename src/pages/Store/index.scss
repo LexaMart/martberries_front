@@ -2,5 +2,10 @@
     display: flex;
     flex-flow: column;
     overflow-y: auto;
-    height: calc(100vh - 102px);
+    height: calc(100vh - 150px);
+}
+
+.check-order {
+    margin-top: 20px;
+    margin-left: 10px;
 }
