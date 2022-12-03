@@ -39,13 +39,13 @@ export const SubmitOrderForm = ({ closeFunc, cartProducts }: { closeFunc: Functi
         dispatch(createOrder(
             {
                 order: {
-                    customer_name: name,
-                    customer_phone: phone,
-                    customer_additiona_info: addInfo,
+                    customerName: name,
+                    customerPhoneNumber: phone,
+                    customerAdditionalInfo: addInfo,
                     orderedProducts: cartProducts.map(el => {
                         return {
                             productId: el.id,
-                            amount: `${el.orderNumber}`
+                            amount: el.orderNumber
                         }
                     })
                 },

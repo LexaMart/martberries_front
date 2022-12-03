@@ -14,3 +14,9 @@ export interface StorageDataItemType {
     orderedProduct: OrderedProductType,
     products: Product[]
 }
+
+export interface OrderItemComponent {
+    order: Order,
+    statusToChange: number
+    role: string
+}

@@ -8,6 +8,7 @@ const initialState: StoreIntialStateType = {
 
 
 // export const addItemAction = createAction("AddItem");
+export const resetUserCart = createAction("RESET_USER_CART");
 export const setProductsList = createAction<Product[]>("SET_PRODUCTS_LIST");
 export const toggleProductToCart = createAction<Product>("ADD_PRODUCT_TO_CART");
 export const changeCartProduct = createAction<Product>("CHANGE_CART_PRODUCT");
@@ -30,5 +31,8 @@ export const storeReducer = createReducer(initialState, (builder) => {
   builder.addCase(changeCartProduct, (state, action) => {
     state.userCart = state.userCart.filter(el => el.id !== action.payload?.id);
     state.userCart.push(action.payload);
+  })
+  builder.addCase(resetUserCart, (state, action) => {
+    state.userCart = initialState.userCart
   })
 })

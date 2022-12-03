@@ -1,9 +1,13 @@
 export interface Order {
     id: string;
-    date: string;
-    status: string;
-    requestor: string;
-    products?: OrderedProductType[];
+    submittedDateTime: string;
+    orderedProducts?: OrderedProductType[];
+    customerAdditionalInfo?: string;
+    customerName: string;
+    customerPhoneNumber: string;
+    submittedMoney: number;
+    requestedMoney: number;
+    orderStatus: number;
 }
 
 export interface OrderedProductType {
@@ -21,11 +25,11 @@ export interface SubmitOrderInput {
     order: {
         orderedProducts: {
             productId: string;
-            amount: string;
+            amount: any;
         }[];
-        customer_name: string;
-        customer_phone: string;
-        customer_additiona_info: string;
+        customerName: string;
+        customerPhoneNumber: string;
+        customerAdditionalInfo: string;
     }
     callback: Function;
 }

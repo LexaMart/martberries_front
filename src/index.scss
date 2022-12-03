@@ -12,7 +12,6 @@ code {
 }
 
 .disabled-btn {
-  background-color: rgba(195, 38, 38, 0.749) !important;
   opacity: 0.5;
 }
 .btn-success {
@@ -22,6 +21,33 @@ code {
   font-weight: 600;
   font-size: 12px;
   border-radius: 5px;
+}
+
+.btn-success:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btn-warning {
+  width: fit-content;
+  padding: 5px;
+  background-color: rgba(238, 175, 27, 0.63);
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.btn-warning:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.error-text {
+  color:red;
+}
+
+.success-text {
+  color: rgba(36, 214, 36, 0.916);
 }
 
 .btn-failure {
@@ -34,10 +60,6 @@ code {
 }
 
 .btn-failure:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-.btn-success:hover {
   opacity: 0.5;
   cursor: pointer;
 }
