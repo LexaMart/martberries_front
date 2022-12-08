@@ -1,4 +1,4 @@
-import { OrderStatusesToReadable } from "../constants/constants"
+import { OrderStatusesToReadable, TransactionsStatusesToReadable } from "../constants/constants"
 
 export const getReadableStatuses = (statusNum: number): string => {
     switch (statusNum) {
@@ -8,5 +8,16 @@ export const getReadableStatuses = (statusNum: number): string => {
             return OrderStatusesToReadable[1]
         default: 
             return OrderStatusesToReadable[0];
+    }
+}
+
+export const getTypeTransactionToReadable = (transactionTypeId: number): string => {
+    switch (transactionTypeId) {
+        case 0:
+            return TransactionsStatusesToReadable[0];
+        case 1:
+            return TransactionsStatusesToReadable[1];
+        default:
+            return "Unknown Money Transaction"
     }
 }

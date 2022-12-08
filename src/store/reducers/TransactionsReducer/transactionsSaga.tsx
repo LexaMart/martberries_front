@@ -1,11 +1,12 @@
+import axios from "axios";
 import { takeEvery, put } from "redux-saga/effects";
-import { TransactionsMock } from "../../../mock/mock";
+import { Api } from "../../../constants/constants";
 import { setTransactionsList, getTransactionsList } from "./transactionsReducer";
 // import axios from "axios";
 
 function* getTransactionsListSaga() {
-  const result = TransactionsMock;
-  yield put(setTransactionsList(result));
+  const { data } = yield axios.get(Api.moneyTransfer)
+  yield put(setTransactionsList(data));
 }
 
 function* TransactionsSaga() {

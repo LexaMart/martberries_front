@@ -10,7 +10,7 @@ export const PurchasingPage = ({...props}) => {
     }, [])
     return (
         <div className=''>
-            <SubHeaderComponent links={[{ linkName: 'Orders', linkTo: "./orders" }, { linkName: "Money Transactions", linkTo: "./transactions" }]} />
+            <SubHeaderComponent links={[{ linkName: 'Orders', linkTo: "./orders" }, { linkName: "Products Purchasing", linkTo: "./transactions" }]} />
             <div className='accounting__content'>
                 <Outlet></Outlet>
             </div>

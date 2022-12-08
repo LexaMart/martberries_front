@@ -26,7 +26,7 @@ export const Header = ({ ...props }) => {
                 <NavLink className="navigation__link" style={({ isActive }) => isActive ? { opacity: "0.5" } : { opacity: "1" }} to={'./admin'}>Admin</NavLink>
                 <NavLink className="navigation__link" style={({ isActive }) => isActive ? { opacity: "0.5" } : { opacity: "1" }} to={'./accaunting'}>Accounting</NavLink>
                 <NavLink className="navigation__link" style={({ isActive }) => isActive ? { opacity: "0.5" } : { opacity: "1" }} to={'./storage'}>Storage</NavLink>
-                <NavLink className="navigation__link" style={({ isActive }) => isActive ? { opacity: "0.5" } : { opacity: "1" }} to={'./storage'}>Purchasing</NavLink>
+                <NavLink className="navigation__link" style={({ isActive }) => isActive ? { opacity: "0.5" } : { opacity: "1" }} to={'./purchasing'}>Purchasing</NavLink>
             </nav>
         </header>
     )

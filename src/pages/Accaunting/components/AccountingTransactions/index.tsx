@@ -13,7 +13,7 @@ export const AccountingTransaction = ({ ...props }) => {
     return (
         <div className='table'>
             {transactionsList.map(el =>
-                <TransactionsItemComponent key={el.id} id={el.id} amount={el.amount} date={el.date} activity={el.activity} />
+                <TransactionsItemComponent key={el.id} id={el.id} amount={el.amount} transferDateTime={el.transferDateTime} transactionTypeId={el.transactionTypeId} transactionType={el.transactionType} />
             )}
         </div>
     )

@@ -118,17 +118,17 @@ import { Transaction } from "../types/transactionsType";
 //     },
 // ]
 
-export const TransactionsMock: Transaction[] = [
-    {
-        id: "1113-1112-1115",
-        activity: "Funds received",
-        date: `${moment()}`,
-        amount: 500,
-    },
-    {
-        id: "1113-1112-1215",
-        activity: "Product purchasing",
-        date: `${moment()}`,
-        amount: -1250,
-    },
-]
+// export const TransactionsMock: Transaction[] = [
+//     {
+//         id: "1113-1112-1115",
+//         activity: "Funds received",
+//         date: `${moment()}`,
+//         amount: 500,
+//     },
+//     {
+//         id: "1113-1112-1215",
+//         activity: "Product purchasing",
+//         date: `${moment()}`,
+//         amount: -1250,
+//     },
+// ]

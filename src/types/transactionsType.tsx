@@ -1,6 +1,7 @@
 export interface Transaction {
     id: string;
-    activity: string;
-    date: string;
+    transferDateTime: string;
+    transactionTypeId: number,
+    transactionType: number,
     amount: number;
 }
