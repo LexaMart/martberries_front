@@ -5,7 +5,11 @@ export const getReadableStatuses = (statusNum: number): string => {
         case 0:
             return OrderStatusesToReadable[0];
         case 1:
-            return OrderStatusesToReadable[1]
+            return OrderStatusesToReadable[1];
+        case 2: 
+            return OrderStatusesToReadable[2];
+        case 3:
+            return OrderStatusesToReadable[3];
         default: 
             return OrderStatusesToReadable[0];
     }

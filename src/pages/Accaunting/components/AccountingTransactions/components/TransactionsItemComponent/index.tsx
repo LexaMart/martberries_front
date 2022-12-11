@@ -11,7 +11,7 @@ export const TransactionsItemComponent = ({ id, amount, transferDateTime, transa
             <div className='transaction-item__id'>{id}</div>
             <div className='transaction-item__activity'>{getTypeTransactionToReadable(transactionType)}</div>
             <div className='transaction-item__date'>{moment(transferDateTime).format("DD-MM-YYYY")}</div>
-            <div className='transaction-item__amount'><span className={transactionType > 0 ? "below" : "above"}>{amount}</span></div>
+            <div className='transaction-item__amount'><span className={transactionType > 0 ? "above" : "below"}>{amount}</span></div>
         </div>
     )
 }

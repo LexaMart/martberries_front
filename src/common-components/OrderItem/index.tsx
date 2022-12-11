@@ -51,6 +51,7 @@ export const OrderItem = ({ order, statusToChange, role }: OrderItemComponent) =
                 <div className="order__id">{order.id}</div>
                 <div className="order__requestor">{order.customerName}</div>
                 <div className="order__data">{moment(order.submittedDateTime).format("DD-MM-YYYY")}</div>
+                <div className="order__info"><span>{order.customerAdditionalInfo}</span></div>
                 <div className="order__status">{getReadableStatuses(+order.orderStatus)}</div>
             </div>
             {isDetails ?

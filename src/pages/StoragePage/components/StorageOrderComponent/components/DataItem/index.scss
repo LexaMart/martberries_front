@@ -1,0 +1,17 @@
+.details-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    &__data {
+
+    }
+}
+
+.status {
+    width: 25%;
+}
+
+.btns {
+    margin-top: 50px;
+}

@@ -10,6 +10,8 @@ export const Api = {
 export const OrderStatusesToReadable = {
     0: "Waiting Confirmation",
     1: "Waiting Bill",
+    2: "Waiting Storage Confirmation",
+    3: "In Delivery"
 }
 
 export const TransactionsStatusesToReadable = {

@@ -11,6 +11,7 @@ export interface StorageOrderType {
 }
 
 export interface StorageDataItemType {
+    orderId: string,
     orderedProduct: OrderedProductType,
     products: Product[]
 }

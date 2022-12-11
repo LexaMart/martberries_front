@@ -23,7 +23,7 @@ function* getAccountingOrdersListSaga() {
 
 function* getStorageOrderSaga() {
   const { data } = yield axios.get(Api.orders);
-  yield put(setStorageOrdersList(data));
+  yield put(setStorageOrdersList(data.filter((el: Order) => el.orderStatus === 2)));
 }
 
 function* createOrderSaga(action: any) {
@@ -36,7 +36,10 @@ function* createOrderSaga(action: any) {
 
 function* changeOrderStatusSaga(action: any) {
   const { data } = yield axios.put(Api.orders, action.payload);
-  yield put(getAdminOrdersList())
+  yield put(getAdminOrdersList());
+  yield put(getAccountingOrdersList());
+  yield put(getStorageOrdersList());
+
 }
 
 function* deleteOrderSaga(action: any) {

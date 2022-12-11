@@ -1,4 +1,11 @@
+.order {
+    display: flex;
+    &__status {
+        width: 25%;
+    }
+}
 .details {
+    margin-top: 50px;
     &__item {
         display: flex;
         margin-bottom: 20px;
