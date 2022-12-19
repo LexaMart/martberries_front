@@ -14,6 +14,7 @@ export interface OrderedProductType {
     id: string,
     amount: number,
     name: string,
+    price: number,
 }
 export interface OrderReducerType {
     adminOrders: Order[];

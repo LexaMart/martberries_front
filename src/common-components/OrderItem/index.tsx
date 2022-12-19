@@ -62,6 +62,7 @@ export const OrderItem = ({ order, statusToChange, role }: OrderItemComponent) =
                             <div className="details__add-info__item__id">{el.id}</div>
                             <div className="details__add-info__item__name">{el.name}</div>
                             <div className="details__add-info__item__amount">{el.amount} items</div>
+                            <div className="details__add-info__item__amount">{el.price} $</div>
                             {role === Functions.accaunting ? <div className={order.requestedMoney === 0 ? "details__add-info__item__requested error-text" : "details__add-info__item__requested"}> requested {order.requestedMoney}$</div> : null}
                             {role === Functions.accaunting ? <div className={"details__add-info__item__provided"}> submitted <span className={order.submittedMoney === 0 || order.submittedMoney !== order.requestedMoney ? "error-text" : "success-text"}>{order.submittedMoney}$</span></div> : null}
                         </div>)}

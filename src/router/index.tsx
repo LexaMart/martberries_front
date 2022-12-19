@@ -7,6 +7,7 @@ import { AdminPage } from '../pages/AdminPage'
 import { Cart } from '../pages/Cart'
 import { NotFoundPage } from '../pages/NotFoundPage'
 import { PurchasingPage } from '../pages/PurchasingPage'
+import { PurchasingOrderPage } from '../pages/PurchasingPage/components/PurchasingOrderComponent'
 import { StoragePage } from '../pages/StoragePage'
 import { Store } from '../pages/Store'
 export const router = createBrowserRouter([
@@ -51,11 +52,11 @@ export const router = createBrowserRouter([
                 element: <PurchasingPage/>,
                 children: [
                     {
-                        path: "/purchasing/transactions",
-                        element: <></>
+                        path: "/purchasing/orders",
+                        element: <PurchasingOrderPage/>
                     },
                     {
-                        path: "/purchasing/orders",
+                        path: "/purchasing/transactions",
                         element: <></>
                     }
                 ]
