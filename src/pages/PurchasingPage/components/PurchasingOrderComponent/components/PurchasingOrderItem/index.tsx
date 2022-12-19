@@ -6,7 +6,7 @@ import './index.scss';
 import { PurchasingDataItem } from './PurchasingDescrItem';
 
 export const PurchasingOrderComponent = ({ order, products }: StorageOrderType) => {
-    const [isDetails, setIsDetails] = useState(true);
+    const [isDetails, setIsDetails] = useState(false);
     useEffect(() => {
     }, [])
     return (
@@ -21,7 +21,7 @@ export const PurchasingOrderComponent = ({ order, products }: StorageOrderType) 
                 {order.orderedProducts?.length ? order.orderedProducts.map(el =>
                     <PurchasingDataItem orderedProduct={el} products={products} orderId={order.id} />
                 ) : <></>}
-            </div>
+            </div>         
         </div>
     )
 }

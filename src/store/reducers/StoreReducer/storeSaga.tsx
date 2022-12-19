@@ -2,7 +2,7 @@ import axios from "axios";
 import { takeEvery, put } from "redux-saga/effects";
 import { Api } from "../../../constants/constants";
 // import axios from "axios";
-import { getProductsList, setProductsList } from "./storeReducer";
+import { getProductsList, getSuppliers, postSupplierProduct, setProductsList, setSuppliers } from "./storeReducer";
 
 
 function* getProductsListSaga() {
@@ -10,8 +10,19 @@ function* getProductsListSaga() {
   yield put(setProductsList(data));
 }
 
+function* getSuppliersSaga() {
+  const { data } = yield axios.get(Api.supplier);
+  yield put(setSuppliers(data))
+}
+
+function* postSupplierProductSaga(data: any) {
+  yield axios.post(Api.supplierBuy, { id: data.payload.id, amount: data.payload.amount });
+}
+
 function* StoreSaga() {
-    yield takeEvery(getProductsList, getProductsListSaga);
-  }
+  yield takeEvery(getProductsList, getProductsListSaga);
+  yield takeEvery(getSuppliers, getSuppliersSaga)
+  yield takeEvery(postSupplierProduct, postSupplierProductSaga)
+}
 
 export default StoreSaga;

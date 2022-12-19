@@ -36,9 +36,9 @@ export const PurchasingDataItem = ({ orderedProduct, products, orderId }: Storag
                 <div className='details-item__data status'>
                     {currentProductObject && currentProductObject?.amount >= orderedProduct.amount ? <div className='btn-success'>Can Be Ordered</div> : <div className='btn-failure'>Not Enough</div>}
                 </div>
-                <div className='details-item__data product'>
+                {/* <div className='details-item__data product'>
                     <div className='btn-warning'>Order product</div>
-                </div>
+                </div> */}
             </div>
             <div className='btns'>
             </div>

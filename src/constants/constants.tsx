@@ -4,7 +4,10 @@ export const Api = {
     orders: `${backUrl}order`,
     orderRequestedMoney: `${backUrl}order/requestedMoney`,
     orderSubmittedMoney: `${backUrl}order/submittedMoney`,
-    moneyTransfer: `${backUrl}MoneyTransfer`
+    moneyTransfer: `${backUrl}MoneyTransfer`,
+    supplier: `${backUrl}Supplier`,
+    supplierBuy: `${backUrl}SupplierProduct/buy`
+
 }
 
 export const OrderStatusesToReadable = {
