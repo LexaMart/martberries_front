@@ -5,9 +5,11 @@ import { AccountingOrder } from '../pages/Accaunting/components/AccountingOrders
 import { AccountingTransaction } from '../pages/Accaunting/components/AccountingTransactions'
 import { AdminPage } from '../pages/AdminPage'
 import { Cart } from '../pages/Cart'
+import { DeliveryPage } from '../pages/DeliveryPage'
 import { NotFoundPage } from '../pages/NotFoundPage'
 import { PurchasingPage } from '../pages/PurchasingPage'
 import { PurchasingOrderPage } from '../pages/PurchasingPage/components/PurchasingOrderComponent'
+import { ProductTransaction } from '../pages/PurchasingPage/components/PurchasingProductsOrderingComponent'
 import { StoragePage } from '../pages/StoragePage'
 import { Store } from '../pages/Store'
 export const router = createBrowserRouter([
@@ -57,10 +59,14 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: "/purchasing/transactions",
-                        element: <></>
+                        element: <ProductTransaction/>
                     }
                 ]
-            }
+            },
+            {
+                path: "/Delivery",
+                element: <DeliveryPage/>
+            },
         ]
     }
 ])

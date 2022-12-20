@@ -1,2 +1,17 @@
 .accounting {
 }
+.excel {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 41%;
+    top: 53px;
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+.excel:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

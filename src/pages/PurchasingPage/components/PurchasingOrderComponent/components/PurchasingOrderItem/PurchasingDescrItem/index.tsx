@@ -14,13 +14,6 @@ export const PurchasingDataItem = ({ orderedProduct, products, orderId }: Storag
 
     }, [currentProductObject?.id, orderedProduct, products])
 
-    const handleStorageSubmit = () => {
-        if (currentProductObject && currentProductObject?.amount >= orderedProduct.amount) {
-            dispatch(changeOrderStatus({ id: orderId, statusId: 3 }))
-        } else {
-
-        }
-    }
     return (
         <>
             <div className='details-item'>

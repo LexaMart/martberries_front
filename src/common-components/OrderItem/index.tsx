@@ -27,7 +27,7 @@ export const OrderItem = ({ order, statusToChange, role }: OrderItemComponent) =
     const submitRequestedMoney = (): void => {
         dispatch(submitOrderRequestedMoney({ id: order.id, requestedMoney: requestedMoney }))
     }
-    const getRoleConfirmCondition = (): boolean => {        
+    const getRoleConfirmCondition = (): boolean => {
         switch (role) {
             case Functions.admin:
                 if (order.orderStatus === 0) {
@@ -36,17 +36,23 @@ export const OrderItem = ({ order, statusToChange, role }: OrderItemComponent) =
                     return false
                 }
             case Functions.accaunting:
-                if (order.orderStatus === 1) {
+                if (order.orderStatus === 2) {
                     return true;
                 } else {
                     return false;
+                }
+            case Functions.delivery:
+                if (order.orderStatus === 4) {
+                    return true;
+                } else {
+                    return false
                 }
             default:
                 return false;
         }
     }
     return (
-        <div onMouseEnter={() => { setIsDetails(true) }} onMouseLeave={() => { setIsDetails(false) }} style={isDetails ? { height: "250px" } : { height: "35px" }} className="order-row">
+        <div onMouseEnter={() => { setIsDetails(true) }} onMouseLeave={() => { setIsDetails(false) }} style={isDetails ? { height: "250px" } : { height: "35px" }} className={order.orderStatus === 5 ? "order-row finished" : "order-row"}>
             <div className="order">
                 <div className="order__id">{order.id}</div>
                 <div className="order__requestor">{order.customerName}</div>

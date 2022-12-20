@@ -4,7 +4,7 @@ import { takeEvery, put, take } from "redux-saga/effects";
 import { Api } from "../../../constants/constants";
 import { Order } from "../../../types/ordersTypes";
 import { getProductsList, resetUserCart } from "../StoreReducer/storeReducer";
-import { changeOrderStatus, createOrder, deleteOrder, getAccountingOrdersList, getAdminOrdersList, getOrderById, getStorageOrdersList, setAccountingOrdersList, setAdminOrderList, setStorageOrdersList, setTrackingInfo, submitOrderProvidedMoney, submitOrderRequestedMoney } from "./ordersReducer";
+import { changeOrderStatus, createOrder, deleteOrder, getAccountingOrdersList, getAdminOrdersList, getDeliveryOrdersList, getOrderById, getStorageOrdersList, setAccountingOrdersList, setAdminOrderList, setDeliveryOrdersList, setStorageOrdersList, setTrackingInfo, submitOrderProvidedMoney, submitOrderRequestedMoney } from "./ordersReducer";
 // import axios from "axios";
 
 function* getAdminOrderSaga() {
@@ -18,12 +18,17 @@ function* getAdminOrderSaga() {
 function* getAccountingOrdersListSaga() {
   const { data } = yield axios.get(Api.orders);
 
-  yield put(setAccountingOrdersList(data.filter((el: Order) => el.orderStatus === 1)));
+  yield put(setAccountingOrdersList(data.filter((el: Order) => (el.orderStatus === 1 || el.orderStatus === 2))));
 }
 
 function* getStorageOrderSaga() {
   const { data } = yield axios.get(Api.orders);
-  yield put(setStorageOrdersList(data.filter((el: Order) => el.orderStatus === 2)));
+  yield put(setStorageOrdersList(data.filter((el: Order) => el.orderStatus === 3)));
+}
+
+function* getDeliveryOrderSaga() {
+  const { data } = yield axios.get(Api.orders);
+  yield put(setDeliveryOrdersList(data.filter((el: Order) => el.orderStatus === 4)));
 }
 
 function* createOrderSaga(action: any) {
@@ -39,6 +44,7 @@ function* changeOrderStatusSaga(action: any) {
   yield put(getAdminOrdersList());
   yield put(getAccountingOrdersList());
   yield put(getStorageOrdersList());
+  yield put(getDeliveryOrdersList());
 
 }
 
@@ -52,6 +58,7 @@ function* deleteOrderSaga(action: any) {
 
 function* setRequestedMoneySaga(action: any) {
   const { data } = yield axios.put(Api.orderRequestedMoney, action.payload);
+  yield put(changeOrderStatus({ id: action.payload.id, statusId: 2 }))
   yield put(getAccountingOrdersList())
 }
 
@@ -77,6 +84,8 @@ function* OrdersSaga() {
   yield takeEvery(submitOrderRequestedMoney, setRequestedMoneySaga);
   yield takeEvery(getOrderById, getOrderByIdSaga);
   yield takeEvery(submitOrderProvidedMoney, setProvidedMoneySaga);
+  yield takeEvery(getDeliveryOrdersList, getDeliveryOrderSaga);
+
 }
 
 export default OrdersSaga;

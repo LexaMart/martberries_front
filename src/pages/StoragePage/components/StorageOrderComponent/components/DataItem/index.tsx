@@ -15,7 +15,7 @@ export const StorageDataItem = ({ orderedProduct, products, orderId }: StorageDa
 
     const handleStorageSubmit = () => {
         if (currentProductObject && currentProductObject?.amount >= orderedProduct.amount) {
-            dispatch(changeOrderStatus({ id: orderId, statusId: 3 }))
+            dispatch(changeOrderStatus({ id: orderId, statusId: 4 }))
         } else {
 
         }

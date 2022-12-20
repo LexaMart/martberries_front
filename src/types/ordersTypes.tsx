@@ -20,6 +20,7 @@ export interface OrderReducerType {
     adminOrders: Order[];
     accountingOrders: Order[];
     storageOrders: Order[];
+    deliveryOrders: Order[];
     trackingInfo: Order | null;
 }
 

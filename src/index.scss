@@ -44,7 +44,7 @@ code {
 }
 
 .error-text {
-  color:red;
+  color: red;
 }
 
 .success-text {
@@ -70,4 +70,8 @@ code {
   flex-flow: column;
   overflow-y: auto;
   height: calc(100vh - 100px);
+}
+
+.finished {
+  background-color: #c9f0c9;
 }

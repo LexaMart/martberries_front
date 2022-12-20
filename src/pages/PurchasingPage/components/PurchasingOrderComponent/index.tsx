@@ -7,7 +7,7 @@ import { PurchasingForm } from './components/PurchasingForm';
 import './index.scss';
 
 export const PurchasingOrderPage = ({ ...props }) => {
-    const [isForm, setIsForm] = useState(true);
+    const [isForm, setIsForm] = useState(false);
     const dispatch = useAppDispatch();
     const { productsList } = useAppSelector(store => store.storeReducer);
     const { storageOrders } = useAppSelector(store => store.ordersReducer);

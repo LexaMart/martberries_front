@@ -13,7 +13,7 @@ export const AccountingOrder = ({ ...props }) => {
     }, [])
     return (
         <div className='table'>
-            {accountingOrders.map(el => <OrderItem key={el.id + 1} order={el} statusToChange={2} role={Functions.accaunting} />)}
+            {accountingOrders.map(el => <OrderItem key={el.id + 1} order={el} statusToChange={3} role={Functions.accaunting} />)}
         </div>
     )
 }

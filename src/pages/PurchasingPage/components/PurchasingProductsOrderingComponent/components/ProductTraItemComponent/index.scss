@@ -1,0 +1,22 @@
+.transaction-item{
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 15px;
+    border-bottom: 1px solid black;
+    // border-top: none;
+    &__id {
+        width: 25%;
+    }
+    &__activity {
+        width: 25%;
+    }
+    &__date {
+        width: 20%;
+    }
+    &__amount {
+        width: 10%;
+    }
+    &__product {
+        width: 20%;
+    }
+}
